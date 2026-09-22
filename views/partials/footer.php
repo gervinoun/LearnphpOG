@@ -1,0 +1,18 @@
+<footer class="py-5 text-center text-body-secondary bg-body-tertiary mt-5">
+
+    <p>
+        Blog template built with Bootstrap.
+    </p>
+
+    <p class="mb-0">
+        <a href="#">
+            Back to top
+        </a>
+    </p>
+
+</footer>
+
+<script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

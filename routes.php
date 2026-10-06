@@ -1,45 +1,18 @@
 <?php
 
-use App\Router;
+use App\Controllers\PostsController;
+use App\Controllers\PublicController;
+use App\Route;
 
-Router::addRoute('/', function () {
-    $title = 'World';
+Route::get('/', [PublicController::class, 'index']);
 
-    $posts = [
-        // postitused siia
-    ];
+Route::get('/us', [PublicController::class, 'us']);
 
-    include __DIR__ . '/views/index.php';
-});
+Route::get('/test', [PublicController::class, 'test']);
 
-Router::addRoute('/us', function () {
-    $title = 'U.S';
+Route::get('/form', [PublicController::class, 'form']);
+Route::post('/form', [PublicController::class, 'answer']);
 
-    $posts = [
-        // postitused siia
-    ];
-
-    include __DIR__ . '/views/us.php';
-});
-
-Router::addRoute('/test', function () {
-    $servername = "localhost";
-    $username = "root";
-    $password = "example";
-    $dbname = "learnphp";
-
-    try {
-        $conn = new PDO(
-            "mysql:host=$servername;dbname=$dbname",
-            $username,
-            $password
-        );
-
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        echo "Connected successfully";
-    } catch (PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
-    }
-});
+Route::get('/admin/posts', [PostsController::class, 'index']);
+Route::get('/admin/posts/create', [PostsController::class, 'create']);
+Route::post('/admin/posts', [PostsController::class, 'store']);

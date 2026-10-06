@@ -7,19 +7,19 @@
     <article class="blog-post">
 
         <h2 class="display-5 link-body-emphasis mb-1">
-            <?= $post['title'] ?>
+            <?= $post->title ?>
         </h2>
 
         <p class="blog-post-meta">
-            <?= $post['date'] ?>
+            <?= $post->created_at ?>
             by
             <a href="#">
-                <?= $post['author'] ?>
+                <?= $post->author ?>
             </a>
         </p>
 
         <p>
-            <?= $post['body'] ?>
+            <?= $post->body ?>
         </p>
 
     </article>
